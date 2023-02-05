@@ -1,6 +1,6 @@
 let fontName = [
     {"id":"1","font":"AGT A Ali","link":"fonts/ps/AGT A Ali.otf"},
-    {"id":"2","font":"AGT AbdoMasterW00-Medium","link":"fonts/ps/AGT AbdoMasterW00-Medium.otf"},
+    {"id":"2","font":"AGT AbdoMasterW00","link":"fonts/ps/AGT AbdoMasterW00-Medium.otf"},
     {"id":"3","font":"AGT Abdul Ahad Mohmand","link":"fonts/ps/AGT Abdul Ahad Mohmand Bold.otf"},
     {"id":"4","font":"AGT Abdul Majeed","link":"fonts/ps/AGT Abdul Majeed Bold Bold.otf"},
     {"id":"5","font":"AGT Abdul Majeed","link":"fonts/ps/AGT Abdul Majeed.otf"},
@@ -8,7 +8,7 @@ let fontName = [
     {"id":"7","font":"AGT ABO Slman Alomar","link":"fonts/ps/AGT ABO Slman Alomar.otf"},
     {"id":"8","font":"AGT Afghan","link":"fonts/ps/AGT Afghan 2.otf"},
     {"id":"9","font":"AGT Afghan","link":"fonts/ps/AGT Afghan.otf"},
-    {"id":"10","font":"AGT Afghan3 Bold","link":"fonts/ps/AGT Afghan3 Bold.otf"},
+    {"id":"10","font":"AGT Afghan3","link":"fonts/ps/AGT Afghan3 Bold.otf"},
     {"id":"11","font":"AGT Afghanistan N Cricket Team","link":"fonts/ps/AGT Afghanistan N Cricket Team.otf"},
     {"id":"12","font":"AGT Afsar Zazai","link":"fonts/ps/AGT Afsar Zazai.otf"},
     {"id":"13","font":"AGT Aftab Alam","link":"fonts/ps/AGT Aftab Alam.otf"},
@@ -21,7 +21,7 @@ let fontName = [
     {"id":"20","font":"AGT Aljazeera","link":"fonts/ps/AGT Aljazeera.otf"},
     {"id":"21","font":"AGT Alvand","link":"fonts/ps/AGT Alvand.otf"},
     {"id":"22","font":"AGT Amanullah Sailab","link":"fonts/ps/AGT Amanullah Sailab.otf"},
-    {"id":"23","font":"AGT Anwar Khairee Bold","link":"fonts/ps/AGT Anwar Khairee Bold.otf"},
+    {"id":"23","font":"AGT Anwar Khairee","link":"fonts/ps/AGT Anwar Khairee Bold.otf"},
     {"id":"24","font":"AGT ar_kifk heart","link":"fonts/ps/AGT ar_kifk heart.otf"},
     {"id":"25","font":"AGT ar_kifk","link":"fonts/ps/AGT ar_kifk.otf"},
     {"id":"26","font":"AGT Aref_Menna","link":"fonts/ps/AGT Aref_Menna.otf"},
@@ -288,6 +288,23 @@ for (let i = 0; i < fontName.length; i++) {
     let currentInput = document.querySelector("#currentInput")
     currentInput.addEventListener('input', () => {
         h1.textContent = currentInput.value
+
+
+        var fontLoader = function (param) {
+            var link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'font';
+            document.head.appendChild(link);
+        
+            link.href = 'https://pashtology.com/fonts/fonts' + param.family + '&effect=' + param.effect;
+        
+        
+        };
+        
+        fontLoader({
+            family: fontName[i].font,
+            effect: 'neon'
+        });
     })
 }
 

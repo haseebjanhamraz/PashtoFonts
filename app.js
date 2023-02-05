@@ -288,22 +288,6 @@ for (let i = 0; i < fontName.length; i++) {
     let currentInput = document.querySelector("#currentInput")
     currentInput.addEventListener('input', () => {
         h1.textContent = currentInput.value
-
-
-        var fontLoader = function (param) {
-            var link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'font';
-            document.head.appendChild(link);
-        
-            link.href = 'https://pashtology.com/fonts/fonts' + param.family;
-        
-        
-        };
-        
-        fontLoader({
-            family: fontName[i].font,
-        });
     })
 }
 

@@ -296,14 +296,13 @@ for (let i = 0; i < fontName.length; i++) {
             link.as = 'font';
             document.head.appendChild(link);
         
-            link.href = 'https://pashtology.com/fonts/fonts' + param.family + '&effect=' + param.effect;
+            link.href = 'https://pashtology.com/fonts/fonts' + param.family;
         
         
         };
         
         fontLoader({
             family: fontName[i].font,
-            effect: 'neon'
         });
     })
 }
